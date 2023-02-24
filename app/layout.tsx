@@ -1,4 +1,9 @@
-import './globals.css'
+import '#/styles/globals.css';
+import '#/styles/style.scss';
+
+import Header from '#/ui/Header'
+import { Footer } from '#/ui/Footer'
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="app notion rounded-t-2xl">
+        <div className="viewpoint z-60"></div>
+        <div className="frame text-clip rounded-t-2xl px-2">
+          <Header />
+          <div className="page-scroller text-clip rounded-t-2xl">
+            {children}
+          </div>
+        </div>
+        <Footer />
+      </body>
     </html>
   )
 }
